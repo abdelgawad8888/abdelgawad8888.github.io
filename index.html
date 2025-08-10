@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed Essmat — Strategic CX & Operations Leader</title>
+  <meta name="description" content="Portfolio of Ahmed Essmat — Strategic CX & Operations Leader. Customer experience, offline sales, city expansion, operational excellence, and data-driven CX." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>try{const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark', s? s==='dark': p);}catch(e){}</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','ui-sans-serif','system-ui']},colors:{brand:{50:'#fff4e6',100:'#ffe7cc',200:'#ffd0a3',300:'#ffb36b',400:'#ff9440',500:'#ff7a00',600:'#e56e00',700:'#b35600',800:'#7a3a00',900:'#4a2300'}},boxShadow:{glow:'0 0 0 4px rgb(255 122 0 / 0.15), 0 8px 30px rgb(255 122 0 / 0.25)'}}}}
+  </script>
+  <style>
+    #cursor-blob{position:fixed;top:0;left:0;width:340px;height:340px;pointer-events:none;border-radius:9999px;filter:blur(55px);opacity:.32;transform:translate(-50%,-50%);mix-blend-mode:multiply;background:radial-gradient(circle at 30% 30%,rgba(255,122,0,.9),rgba(56,189,248,.7),rgba(168,85,247,.6));z-index:0;transition:opacity .3s ease}
+    @media (prefers-reduced-motion: reduce){#cursor-blob{display:none}}
+    .glass{background:rgba(255,255,255,.08);backdrop-filter:blur(10px)}.dark .glass{background:rgba(24,24,27,.6)}
+    .tilt-card{transform-style:preserve-3d;will-change:transform}.tilt-card .tilt-inner{transform:translateZ(26px)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;padding:.6rem 1rem;font-weight:600}
+    .btn-primary{background:#0a0a0a;color:#fff}.dark .btn-primary{background:#fff;color:#0a0a0a}
+    .btn-glow{background:linear-gradient(90deg,#ff7a00,#a855f7);color:#fff;box-shadow:0 0 0 4px rgb(255 122 0 / .15),0 8px 30px rgb(255 122 0 / .25)}
+    /* modal for Formspree */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:70}
+    .modal-overlay.visible{display:flex}
+    .modal-content{max-width:32rem;width:92%;border-radius:1rem;padding:1.25rem;background:#0b0b0c;color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    .gradient-text{background:linear-gradient(90deg,#ff7a00,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent}
+  </style>
+</head>
+<body class="bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 antialiased relative">
+  <div id="cursor-blob" aria-hidden="true"></div>
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-brand-400 via-sky-400 to-fuchsia-500 w-0 z-[60]"></div>
+
+  <!-- NAVBAR (v7: overlap-proof XL nav; drawer on smaller) -->
+  <header id="navbar" class="sticky top-0 z-40 bg-white/80 dark:bg-zinc-900/80 backdrop-blur border-b border-zinc-200/60 dark:border-white/10">
+    <nav class="mx-auto w-[min(1280px,94%)] px-2 sm:px-0 py-3 flex items-center gap-3">
+      <a href="#" class="flex items-center gap-2 font-extrabold tracking-tight text-lg flex-none">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-fuchsia-500 text-white shadow-glow">AE</span>
+        <span class="hidden sm:block">Ahmed Essmat</span>
+      </a>
+
+      <div class="hidden xl:flex items-center gap-6 text-sm font-medium ml-2">
+        <a href="#about" class="hover:text-brand-600">About</a>
+        <a href="#focus" class="hover:text-brand-600">Focus Areas</a>
+        <a href="#help" class="hover:text-brand-600">How I Can Help</a>
+        <a href="#work" class="hover:text-brand-600">Case Studies</a>
+        <a href="#recs" class="hover:text-brand-600">Recommendations</a>
+        <a href="#timeline" class="hover:text-brand-600">Timeline</a>
+        <a href="#experience" class="hover:text-brand-600">Experience</a>
+        <a href="#certs" class="hover:text-brand-600">Certifications</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a>
+      </div>
+
+      <div class="flex-1"></div>
+
+      <a href="ahmed-essmat-Resume.pdf" download class="btn btn-primary whitespace-nowrap flex-none shadow-lg hover:scale-[1.02] transition">Résumé (PDF)</a>
+
+      <button id="nav-toggle" class="xl:hidden ml-2 rounded-lg px-3 py-2 border border-white/10">Menu</button>
+    </nav>
+
+    <!-- Drawer menu -->
+    <div id="drawer" class="hidden xl:hidden fixed inset-y-0 right-0 w-72 max-w-[85%] bg-zinc-900 text-white shadow-xl border-l border-white/10 p-6 z-50">
+      <div class="flex items-center justify-between">
+        <div class="font-extrabold">Menu</div>
+        <button id="drawer-close" class="rounded-md px-2 py-1 border border-white/10">✕</button>
+      </div>
+      <div class="mt-6 grid gap-4 text-sm">
+        <a href="#about" class="hover:text-brand-400">About</a>
+        <a href="#focus" class="hover:text-brand-400">Focus Areas</a>
+        <a href="#help" class="hover:text-brand-400">How I Can Help</a>
+        <a href="#work" class="hover:text-brand-400">Case Studies</a>
+        <a href="#recs" class="hover:text-brand-400">Recommendations</a>
+        <a href="#timeline" class="hover:text-brand-400">Timeline</a>
+        <a href="#experience" class="hover:text-brand-400">Experience</a>
+        <a href="#certs" class="hover:text-brand-400">Certifications</a>
+        <a href="#contact" class="hover:text-brand-400">Contact</a>
+        <a href="ahmed-essmat-Resume.pdf" download class="mt-2 btn btn-glow justify-center">Résumé (PDF)</a>
+      </div>
+    </div>
+    <div id="drawer-backdrop" class="hidden xl:hidden fixed inset-0 bg-black/40 z-40"></div>
+  </header>
+
+  <!-- HERO (landscape split) -->
+  <section id="about" class="relative py-14 overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-[620px] h-[620px] rounded-full blur-3xl opacity-30 bg-gradient-to-br from-brand-400 via-sky-400 to-fuchsia-500 pointer-events-none"></div>
+    <div class="mx-auto w-[min(1280px,94%)] relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div data-reveal>
+        <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">Strategic <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-sky-500 to-fuchsia-500">CX & Operations</span> Leader</h1>
+        <p class="mt-5 text-lg text-zinc-600 dark:text-zinc-300">I align customer experience with operational excellence to unlock growth. Over a decade building VoC‑driven systems that reduce friction, accelerate delivery & refunds, and turn service into a competitive edge. Most recently, I led offline sales & city expansion at Jumia Egypt, scaling pickup stations, activations, and real‑time SLA governance in Power BI.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#work" class="btn btn-primary shadow-lg">See case studies →</a>
+          <a href="#contact" class="btn btn-glow">Contact me</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-4" aria-label="Impact metrics" data-reveal>
+        <div class="glass rounded-2xl p-6 border border-white/10 text-center">
+          <div class="text-4xl font-extrabold">10+</div>
+          <div class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Years in CX & Ops</div>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10 text-center">
+          <div class="text-4xl font-extrabold">500+</div>
+          <div class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Activations Led</div>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10 text-center">
+          <div class="text-4xl font-extrabold">95%</div>
+          <div class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">On‑time Delivery</div>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10 text-center">
+          <div class="text-4xl font-extrabold">60%</div>
+          <div class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">Faster Refunds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE FOCUS AREAS -->
+  <section id="focus" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Core Focus Areas</h2>
+      <div class="mt-6 grid lg:grid-cols-3 gap-6">
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Customer Experience Operations</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">End-to-end operations leadership across shopping, delivery, returns, and compliance with VoC‑driven improvements.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">City & Market Expansion</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Rapid rollout of pickup stations and multi‑city activations; cross‑functional GTM collaboration and agent enablement.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">B2B Workflow Optimization</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Process re‑engineering and automation across sales, logistics, and support to eliminate recurring issues.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I CAN HELP -->
+  <section id="help" class="py-10">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">How I Can Help</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <h3 class="font-semibold">CX Strategy & Operations</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Design end‑to‑end CX, SLA governance, and VoC loops to lift satisfaction and reduce friction.</p>
+          <a href="#work" class="mt-4 inline-flex items-center gap-2 text-brand-500 font-semibold">Read more →</a>
+        </article>
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <h3 class="font-semibold">City & Market Expansion</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Plan and execute multi‑city rollouts with field activations, agent playbooks, and KPI tracking.</p>
+          <a href="#work" class="mt-4 inline-flex items-center gap-2 text-brand-500 font-semibold">Read more →</a>
+        </article>
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <h3 class="font-semibold">B2B Workflow Optimization</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Eliminate bottlenecks via SOPs and tooling; automate cross‑team flows for speed and compliance.</p>
+          <a href="#work" class="mt-4 inline-flex items-center gap-2 text-brand-500 font-semibold">Read more →</a>
+        </article>
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <h3 class="font-semibold">Data & Dashboards</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Build Power BI dashboards and KPI frameworks for real‑time visibility and agile leadership.</p>
+          <a href="#work" class="mt-4 inline-flex items-center gap-2 text-brand-500 font-semibold">Read more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="work" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Case Studies</h2>
+      <p class="mt-2 text-zinc-600 dark:text-zinc-400">Context → Approach → Impact. No fluff, just outcomes.</p>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <article class="tilt-card group glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <div class="tilt-inner">
+            <h3 class="font-bold text-xl">NPS Recovery & Contact Reduction</h3>
+            <ul class="mt-3 text-sm list-disc pl-5 space-y-1"><li>Contacts per order ↓; NPS ↑ within two quarters</li><li>Refund cycle ↓ ~60% via policy + tooling</li><li>Root‑cause ownership cadence by function</li></ul>
+          </div>
+        </article>
+        <article class="tilt-card group glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <div class="tilt-inner">
+            <h3 class="font-bold text-xl">Last‑mile SLA Command Center</h3>
+            <ul class="mt-3 text-sm list-disc pl-5 space-y-1"><li>OTIF & first‑attempt delivery ↑ with real‑time exception handling</li><li>Queue health & aging visible in Power BI</li><li>War‑room rituals and playbooks with hubs/carriers</li></ul>
+          </div>
+        </article>
+        <article class="tilt-card group glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <div class="tilt-inner">
+            <h3 class="font-bold text-xl">Pickup Station Rollout Engine</h3>
+            <ul class="mt-3 text-sm list-disc pl-5 space-y-1"><li>10+ stations live; 500+ activations in 5 months</li><li>Budget split across electronics/fashion/health & beauty</li><li>Conversion & CPA tracked; playbook iterated</li></ul>
+          </div>
+        </article>
+        <article class="tilt-card group glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <div class="tilt-inner">
+            <h3 class="font-bold text-xl">Returns & Refunds Streamline</h3>
+            <ul class="mt-3 text-sm list-disc pl-5 space-y-1"><li>Refunds turnaround ↓ ~60%</li><li>Sentiment ↑ on post‑contact surveys</li><li>Repeat contacts ↓ and volume stabilized</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL RECOMMENDATIONS -->
+  <section id="recs" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Professional Recommendations</h2>
+      <p class="mt-2 text-zinc-600 dark:text-zinc-400">Testimonials from senior leaders and industry professionals who have witnessed the impact of strategic leadership and operational excellence.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <div class="text-brand-500 text-2xl">“</div>
+          <p class="mt-2 text-sm">"Ahmed is a high potential talent with exceptional leadership capabilities. His willingness to improve, taking risks and adjusting to change allows him to progress in his career and deliver outstanding results."</p>
+          <div class="mt-6 pt-4 border-t border-white/10 text-sm">
+            <div class="font-semibold">Ola Youssef</div>
+            <div class="text-zinc-500 dark:text-zinc-400">Regional Senior Director — NTT Data Inc</div>
+            <div class="mt-2" aria-label="5 stars">★★★★★</div>
+          </div>
+        </article>
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <div class="text-brand-500 text-2xl">“</div>
+          <p class="mt-2 text-sm">"Ahmed is a dynamic professional with an unwavering commitment to delivering results. His remarkable efficiency and ability to swiftly tackle challenges make him an invaluable asset to any organization."</p>
+          <div class="mt-6 pt-4 border-t border-white/10 text-sm">
+            <div class="font-semibold">Namita Sharma</div>
+            <div class="text-zinc-500 dark:text-zinc-400">Founder — AI Platform</div>
+            <div class="mt-2">★★★★★</div>
+          </div>
+        </article>
+        <article class="glass rounded-2xl p-6 border-l-4 border-brand-500" data-reveal>
+          <div class="text-brand-500 text-2xl">“</div>
+          <p class="mt-2 text-sm">"Ahmed's leadership in launching citywide activations is unmatched—he brings data, people, and process together for flawless execution. His strategic thinking and operational excellence drive measurable business impact."</p>
+          <div class="mt-6 pt-4 border-t border-white/10 text-sm">
+            <div class="font-semibold">Houda Chafki</div>
+            <div class="text-zinc-500 dark:text-zinc-400">Group Head of Customer Operations — Jumia Group</div>
+            <div class="mt-2">★★★★★</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER TIMELINE -->
+  <section id="timeline" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Career Timeline</h2>
+        <div class="flex rounded-full border border-white/10 overflow-hidden text-sm">
+          <button id="btnNewOld" class="px-4 py-2 bg-brand-500 text-white">Newest → Oldest</button>
+          <button id="btnOldNew" class="px-4 py-2">Oldest → Newest</button>
+        </div>
+      </div>
+      <p class="mt-1 text-xs text-zinc-500 dark:text-zinc-400">Most recent → Older</p>
+      <div id="timelineWrap" class="mt-6 grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2024"><div class="text-xs text-zinc-400">2024 – PRESENT</div><div class="font-semibold mt-1">Head of Offline Marketing & City Expansion</div><div class="text-xs mt-1">Jumia Egypt</div></div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2020"><div class="text-xs text-zinc-400">2020 – 2024</div><div class="font-semibold mt-1">Senior Manager – Customer Operations</div><div class="text-xs mt-1">Jumia Egypt</div></div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2018"><div class="text-xs text-zinc-400">2018 – 2020</div><div class="font-semibold mt-1">CX & Operations Manager</div><div class="text-xs mt-1">Jumia Food & Jumia Mall</div></div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2017"><div class="text-xs text-zinc-400">2017 – 2018</div><div class="font-semibold mt-1">E2E Queue Mgmt Expert</div><div class="text-xs mt-1">Jumia Egypt</div></div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2015"><div class="text-xs text-zinc-400">2015</div><div class="font-semibold mt-1">Operations Manager – Entertainment</div><div class="text-xs mt-1">Emaar Masr | Marassi</div></div>
+        <div class="glass rounded-2xl p-5 border-l-4 border-brand-500" data-order="2010"><div class="text-xs text-zinc-400">2010 – 2012</div><div class="font-semibold mt-1">Customer Service Roles</div><div class="text-xs mt-1">Etisalat UAE • du UAE</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE (verbatim roles) -->
+  <section id="experience" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Experience</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-bold text-xl">HEAD OF OFFLINE MARKETING & CITY EXPANSION — Jumia Egypt</h3>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400">July 2024 – Present • Cairo, Egypt</p>
+          <ul class="mt-3 text-sm list-disc pl-5 space-y-1">
+            <li>Spearheaded offline marketing sales strategies, consistently exceeding KPI targets across Cairo, Giza, and Canal Cities</li>
+            <li>Successfully launched over 10 pickup stations and executed 500+ field activations within 5 months</li>
+            <li>Fostered cross-functional collaboration with Commercial, Marketing, Logistics, and Finance teams</li>
+            <li>Managed end-to-end lifecycle for new field agents, creating knowledge bases and training materials</li>
+            <li>Optimized spend for maximum ROI by overseeing field activation budgets and vendor relationships</li>
+          </ul>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-bold text-xl">SENIOR MANAGER – CUSTOMER OPERATIONS — Jumia Egypt</h3>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400">January 2020 – July 2024 • Cairo, Egypt</p>
+          <ul class="mt-3 text-sm list-disc pl-5 space-y-1">
+            <li>Achieved 20% reduction in delivery timelines while maintaining 95% on-time delivery rate for 12 consecutive months</li>
+            <li>Streamlined refund processing time by 60%, significantly boosting customer trust and satisfaction</li>
+            <li>Improved Net Promoter Score (NPS) by leading Voice of Customer (VoC) analysis and implementing solutions</li>
+            <li>Directed PMO reviews across operational verticals, fostering accountability and ensuring strict SLA adherence</li>
+            <li>Served as the Head of Customer Experience during the leadership transition, overseeing Shopping, Delivery, and Returns</li>
+          </ul>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-bold text-xl">CUSTOMER EXPERIENCE MANAGER — Jumia Egypt</h3>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400">December 2018 – January 2020 • Cairo, Egypt</p>
+          <ul class="mt-3 text-sm list-disc pl-5 space-y-1">
+            <li>Directed successful operational launch of Jumia Food in Egypt, building support teams and defining workflows</li>
+            <li>Leveraged Power BI to develop live dashboards, enabling agile decision-making and driving CX improvements</li>
+            <li>Led post-order support and SLA compliance for Jumia Marketplace, improving returns efficiency</li>
+          </ul>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-bold text-xl">CUSTOMER EXPERIENCE – E2E QUEUE MANAGEMENT EXPERT — Jumia Egypt</h3>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400">July 2017 – December 2018 • Cairo, Egypt</p>
+          <ul class="mt-3 text-sm list-disc pl-5 space-y-1">
+            <li>Maintained 99% on-time delivery in Cairo & Giza by redesigning end-to-end queue management systems</li>
+            <li>Standardized queue policies and trained cross-functional teams on lean delivery and escalation handling</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS (per screenshot set) -->
+  <section id="certs" class="py-12">
+    <div class="mx-auto w-[min(1280px,94%)]">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Professional Certifications</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Six Sigma: Black Belt</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">LinkedIn Learning • 2025</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Advanced process improvement methodology for operational excellence and quality management.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Lean Six Sigma Foundations</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">LinkedIn Learning • 2025</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Foundational principles of lean manufacturing and process optimization.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Project Management Skills for Leaders</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">LinkedIn Learning • 2024</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Leadership‑focused project management methodologies and team coordination strategies.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Customer Experience (CX) Strategy</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">LinkedIn Learning • 2024</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Strategic approach to customer experience design and implementation.</p>
+        </article>
+        <article class="glass rounded-2xl p-6 border border-white/10" data-reveal>
+          <h3 class="font-semibold">Microsoft Power BI Data Analyst</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Microsoft • 2024</p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 mt-1">Advanced data analysis and visualization using Power BI for business intelligence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (v7 layout) with YOUR FORMSPREE integration -->
+  <section id="contact" class="py-16">
+    <div class="mx-auto w-[min(1100px,94%)]">
+      <div class="glass rounded-3xl p-8 md:p-10 border border-white/10" data-reveal>
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Let’s build something great</h2>
+        <p class="mt-2 text-zinc-600 dark:text-zinc-400">Prefer WhatsApp? Email? LinkedIn? Choose what’s easiest.</p>
+        <div class="mt-6 grid sm:grid-cols-3 gap-3">
+          <a href="mailto:ahmedabdelgawad8888@gmail.com" class="rounded-xl border border-zinc-200/70 dark:border-white/10 px-4 py-3 hover:bg-zinc-100/60 dark:hover:bg-white/5">📧 Email</a>
+          <a href="https://wa.me/201024557722" target="_blank" rel="noopener" class="rounded-xl border border-zinc-200/70 dark:border-white/10 px-4 py-3 hover:bg-zinc-100/60 dark:hover:bg-white/5">🟢 WhatsApp</a>
+          <a href="https://linkedin.com/in/ahmed-essmat-elsayed" target="_blank" rel="noopener" class="rounded-xl border border-zinc-200/70 dark:border-white/10 px-4 py-3 hover:bg-zinc-100/60 dark:hover:bg-white/5">🔗 LinkedIn</a>
+        </div>
+
+        <!-- Formspree form (your endpoint) -->
+        <form id="contactForm" action="https://formspree.io/f/mrbloqqw" method="POST" class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-1">
+            <label class="block text-zinc-500 dark:text-zinc-300 mb-2">Name</label>
+            <input type="text" name="name" required class="w-full rounded-xl border border-zinc-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-400" placeholder="Your name" />
+          </div>
+          <div class="sm:col-span-1">
+            <label class="block text-zinc-500 dark:text-zinc-300 mb-2">Email</label>
+            <input type="email" name="email" required class="w-full rounded-xl border border-zinc-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-400" placeholder="your.email@example.com" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-zinc-500 dark:text-zinc-300 mb-2">Message</label>
+            <textarea name="message" rows="5" required class="w-full rounded-xl border border-zinc-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-400 resize-none" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <div class="sm:col-span-2 flex items-center justify-between gap-4">
+            <label class="inline-flex items-center gap-2 text-sm"><input type="checkbox" class="accent-brand-500" /> Keep me posted on new case studies</label>
+            <button type="submit" class="btn btn-glow">Send message →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10 text-center text-sm text-zinc-500 dark:text-zinc-400">
+    <div class="flex items-center justify-center gap-4 mb-3">
+      <a href="mailto:ahmedabdelgawad8888@gmail.com" class="hover:text-brand-600">Email</a>
+      <span>•</span>
+      <a href="https://wa.me/201024557722" target="_blank" rel="noopener" class="hover:text-brand-600">WhatsApp</a>
+      <span>•</span>
+      <a href="https://linkedin.com/in/ahmed-essmat-elsayed" target="_blank" rel="noopener" class="hover:text-brand-600">LinkedIn</a>
+    </div>
+    © <span data-year></span> Ahmed Essmat. Built with ♥.
+  </footer>
+
+  <!-- Modal for Formspree states -->
+  <div id="formModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3 id="modalTitle" class="text-2xl font-bold mb-2 gradient-text">Thank You!</h3>
+      <p id="modalMessage" class="text-zinc-300 mb-4">Your message has been sent. I'll get back to you soon!</p>
+      <div class="text-right">
+        <button onclick="closeModal()" class="px-6 py-2 bg-white text-black rounded-full font-medium hover:bg-zinc-200 transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Scroll progress
+    (function(){const bar=document.getElementById('scroll-progress');const set=()=>{const sc=window.scrollY;const h=document.body.scrollHeight-window.innerHeight;bar.style.width=(h?(sc/h)*100:0)+'%'};window.addEventListener('scroll',set,{passive:true});window.addEventListener('resize',set);set();})();
+    // Reveal on scroll
+    (function(){const io=new IntersectionObserver((entries)=>{entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('transition','duration-700','ease-out','opacity-100','translate-y-0');e.target.classList.remove('opacity-0','translate-y-4');io.unobserve(e.target);}})},{threshold:0.12});document.querySelectorAll('[data-reveal]').forEach(el=>{el.classList.add('opacity-0','translate-y-4');io.observe(el);});})();
+    // Tilt + magnetic
+    (function(){const tiltCards=document.querySelectorAll('.tilt-card');tiltCards.forEach(card=>{let raf;card.addEventListener('mousemove',(e)=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateX(${(-y*6).toFixed(2)}deg) rotateY(${(x*6).toFixed(2)}deg)`;});});card.addEventListener('mouseleave',()=>{card.style.transform='rotateX(0) rotateY(0)';});});})();
+    // Cursor blob follow
+    (function(){const blob=document.getElementById('cursor-blob');let raf,x=0,y=0;const ease=0.12;window.addEventListener('pointermove',(e)=>{x=e.clientX;y=e.clientY;blob.style.opacity=.35;});const loop=()=>{const r=blob.getBoundingClientRect();const cx=r.left+r.width/2;const cy=r.top+r.height/2;const nx=cx+(x-cx)*ease;const ny=cy+(y-cy)*ease;blob.style.transform=`translate(${nx-r.width/2}px, ${ny-r.height/2}px)`;raf=requestAnimationFrame(loop);};raf=requestAnimationFrame(loop);window.addEventListener('mouseleave',()=> blob.style.opacity=0);})();
+    // Dynamic year
+    document.querySelectorAll('[data-year]').forEach(n=> n.textContent=new Date().getFullYear());
+    // Timeline sort
+    (function(){const w=document.getElementById('timelineWrap');const btnNew=document.getElementById('btnNewOld');const btnOld=document.getElementById('btnOldNew');function sort(desc=true){const items=[...w.children];items.sort((a,b)=>desc?Number(b.dataset.order)-Number(a.dataset.order):Number(a.dataset.order)-Number(b.dataset.order));items.forEach(i=>w.appendChild(i));btnNew.classList.toggle('bg-brand-500',desc);btnNew.classList.toggle('text-white',desc);btnOld.classList.toggle('bg-brand-500',!desc);btnOld.classList.toggle('text-white',!desc);}btnNew?.addEventListener('click',()=>sort(true));btnOld?.addEventListener('click',()=>sort(false));sort(true);} )();
+
+    // Drawer logic
+    (function(){const t=document.getElementById('nav-toggle');const d=document.getElementById('drawer');const b=document.getElementById('drawer-backdrop');const c=document.getElementById('drawer-close');function open(){d.classList.remove('hidden');b.classList.remove('hidden');document.body.style.overflow='hidden';}function close(){d.classList.add('hidden');b.classList.add('hidden');document.body.style.overflow='';}t?.addEventListener('click',open);c?.addEventListener('click',close);b?.addEventListener('click',close);document.querySelectorAll('#drawer a[href^="#"]').forEach(a=>a.addEventListener('click',close));})();
+
+    // --- Formspree handler (your logic, adapted) ---
+    const contactForm=document.getElementById('contactForm');
+    const modal=document.getElementById('formModal');
+    const modalTitle=document.getElementById('modalTitle');
+    const modalMessage=document.getElementById('modalMessage');
+
+    async function handleSubmit(event){
+      event.preventDefault();
+      const form=event.target;const data=new FormData(form);
+      modalTitle.textContent='Sending...';modalMessage.textContent='Please wait a moment.';modal.classList.add('visible');
+      try{const response=await fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}});
+        if(response.ok){modalTitle.textContent='Thank You!';modalMessage.textContent="Your message has been sent successfully. I'll get back to you soon!";form.reset();}
+        else{const res=await response.json();if(Object.hasOwn(res,'errors')){const msg=res.errors.map(e=>e.message).join(', ');throw new Error(msg);}throw new Error('Oops! There was a problem submitting your form.');}
+      }catch(err){modalTitle.textContent='Error';modalMessage.textContent=err.message||'Something went wrong. Please try again later.';}
+    }
+    function closeModal(){modal.classList.remove('visible');}
+    contactForm?.addEventListener('submit',handleSubmit);
+    modal?.addEventListener('click',(e)=>{if(e.target===modal)closeModal();});
+    window.closeModal=closeModal;
+  </script>
+</body>
+</html>
