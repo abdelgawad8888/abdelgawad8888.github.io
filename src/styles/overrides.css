@@ -1,0 +1,260 @@
+/**
+ * Global design overrides and brand utilities
+ * - Palette and surface tweaks (keeps shadcn.css intact)
+ * - System UI font stack for a fresher, modern look
+ * - Reusable utility classes for gradient accents and glass cards
+ */
+
+:root {
+  /* PMO-inspired cool brand palette (indigo -> cyan) */
+  --brand: 217 92% 54%;         /* primary brand (indigo/blue) */
+  --brand-soft: 190 90% 50%;    /* secondary brand (cyan/teal) */
+  --brand-strong: 217 92% 45%;  /* deeper shade for borders when needed */
+
+  --bg-deep: #0b0f14; /* cooler near-black */
+  --bg-elev: #121822;
+  --text-high: #ffffff;
+  --text-mid: #c6cbd2;
+  --text-low: #97a0aa;
+}
+
+body {
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-high);
+}
+
+/* Existing remaps to ensure bluish-dark → neutral charcoal (kept for safety) */
+.bg-gray-900,
+.bg-slate-900,
+.bg-neutral-900,
+.bg-zinc-900 {
+  background-color: #545454 !important;
+}
+
+.border-gray-800,
+.border-slate-800,
+.border-neutral-800,
+.border-zinc-800 {
+  border-color: #545454 !important;
+}
+
+.ring-gray-800,
+.outline-gray-800 {
+  --tw-ring-color: #545454 !important;
+  outline-color: #545454 !important;
+}
+
+.bg-gradient-to-b.from-slate-900,
+.bg-gradient-to-r.from-slate-900 {
+  background: #545454 !important;
+}
+
+/* Brand helpers (opt-in classes) */
+.brand-gradient {
+  background-image: linear-gradient(90deg, hsl(var(--brand)) 0%, hsl(var(--brand-soft)) 100%);
+}
+
+.brand-text {
+  background-image: linear-gradient(90deg, hsl(var(--brand)), #9ae6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid hsl(var(--brand));
+  border-radius: 0.5rem;
+  backdrop-filter: saturate(140%) blur(6px);
+}
+
+.card-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transition: background 200ms ease, transform 200ms ease;
+  transform: translateY(-1px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-mid);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.kpi {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link-ghost {
+  color: #8ccdfd;
+  transition: color 150ms ease;
+}
+.link-ghost:hover {
+  color: white;
+}
+
+/* Nav underline indicator (used with relative parent) */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0%;
+  background: hsl(var(--brand));
+  transition: width 180ms ease;
+}
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Section subtle radial glow */
+.section-glow {
+  position: absolute;
+  inset: auto;
+  top: -10rem;
+  left: 50%;
+  width: 48rem;
+  height: 24rem;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(90, 180, 255, 0.18) 0%, rgba(90, 180, 255, 0) 60%);
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+/* --------- New utilities for the refresh --------- */
+
+/* Soft grid lines for depth (dark mode friendly) */
+.section-grid {
+  position: relative;
+  isolation: isolate;
+}
+.section-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Radial highlight behind content */
+.section-radial {
+  position: relative;
+  isolation: isolate;
+}
+.section-radial::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6rem;
+  transform: translateX(-50%);
+  width: 56rem;
+  height: 28rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(74, 144, 226, 0.16) 0%, rgba(74, 144, 226, 0) 60%);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+/* Eyebrow pill surface */
+.header-eyebrow {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+
+/* Slight lift and tint on hover for cards using className 'lift' */
+.lift {
+  transition: transform 220ms ease, background-color 220ms ease, border-color 220ms ease;
+}
+.lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Maintain good defaults */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  overscroll-behavior: none;
+  font-synthesis-weight: none;
+}
+
+html > body * {
+  border-color: hsl(var(--border));
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 5px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+/* --------- Orange → PMO brand remap (surgical overrides) ---------
+   This keeps component code untouched by remapping Tailwind's orange
+   classes to the new PMO brand colors.
+*/
+.text-orange-500 { color: hsl(var(--brand)) !important; }
+.text-orange-400 { color: hsl(var(--brand-soft)) !important; }
+
+.border-orange-500 { border-color: hsl(var(--brand)) !important; }
+.border-orange-600 { border-color: hsl(var(--brand-strong)) !important; }
+.border-orange-500\/20 { border-color: hsl(var(--brand) / 0.2) !important; }
+.border-orange-500\/30 { border-color: hsl(var(--brand) / 0.3) !important; }
+.border-orange-500\/40 { border-color: hsl(var(--brand) / 0.4) !important; }
+
+.bg-orange-500 { background-color: hsl(var(--brand)) !important; }
+.bg-orange-500\/20 { background-color: hsl(var(--brand) / 0.2) !important; }
+
+/* Divider accent using brand */
+.brand-divider { background-color: hsl(var(--brand)); }
+
+/* --------- Alternating section surfaces --------- */
+.surface-deep { background-color: #0b0f14; }   /* default deep */
+.surface-alt  { background-color: #0e141d; }   /* alternate surface for visual rhythm */
