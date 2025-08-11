@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahmed Essmat – Senior Customer Success Manager</title>
+  <style>
+    :root{
+      /* Light theme palette */
+      --bg:#f7f8fa;           /* page background */
+      --card:#ffffff;         /* cards */
+      --fg:#121212;           /* main text */
+      --muted:#667085;        /* secondary text */
+      --accent:#ff9900;       /* Jumia orange accent */
+      --accent-ink:#3d2b00;   /* contrast on accent */
+      --rule:#e5e7eb;         /* borders */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--fg); font: 14.5px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji"; }
+
+    .wrap{ max-width:1020px; margin:48px auto; padding:0 24px 96px; }
+
+    /* Header */
+    header{ display:grid; gap:10px; border-bottom:1px solid var(--rule); padding-bottom:18px; }
+    .name{ font-size:34px; font-weight:800; letter-spacing:.2px; }
+    .title{ font-size:16px; color:var(--muted); font-weight:600; }
+    .contacts{ display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:6px; }
+    .chip{ display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--rule); background:var(--card); border-radius:999px; color:var(--fg); text-decoration:none; transition:transform .08s ease, box-shadow .2s ease; box-shadow:0 2px 6px rgba(0,0,0,.05); }
+    .chip:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.08); }
+    .chip svg{ width:16px; height:16px; opacity:.8; }
+
+    /* Layout */
+    main{ display:grid; grid-template-columns: 300px 1fr; gap:28px; margin-top:28px; }
+    @media (max-width: 860px){ main{ grid-template-columns: 1fr; } }
+
+    /* Cards & sections */
+    .card{ background:var(--card); border:1px solid var(--rule); border-radius:16px; padding:18px 18px; box-shadow:0 8px 24px rgba(0,0,0,.04); }
+    h2{ margin:0 0 12px; font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+    h3{ margin:0; font-size:16px; font-weight:700; }
+    .muted{ color:var(--muted); }
+    .pill{ display:inline-block; padding:6px 12px; border:1px solid var(--rule); border-radius:999px; background:#fff; }
+    ul{ margin:8px 0 0 18px; padding:0; }
+    li{ margin:6px 0; }
+
+    .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:8px 10px; }
+    @media (max-width: 540px){ .grid-2{ grid-template-columns:1fr; } }
+
+    .role{ display:flex; flex-direction:column; gap:2px; }
+    .role .meta{ display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; }
+    .meta .place{ color:var(--muted); font-weight:600; }
+    .meta .date{ color:var(--muted); }
+
+    .accent{ color:var(--accent); }
+    .bullet strong{ font-weight:800; }
+
+    /* Print: A4 friendly */
+    @page{ size:A4; margin:14mm; }
+    @media print{
+      body{ background:#fff; }
+      .wrap{ padding:0; margin:0; }
+      .print-hide{ display:none !important; }
+      .card{ -webkit-print-color-adjust:exact; print-color-adjust:exact; box-shadow:none; }
+      a{ color:#000; text-decoration:none; }
+    }
+
+    /* Floating actions */
+    .fab{ position:fixed; right:22px; bottom:22px; display:flex; gap:12px; z-index:9999; }
+    .btn{ border:none; border-radius:999px; padding:10px 14px; background:var(--accent); color:var(--accent-ink); font-weight:750; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,.22); }
+    .btn:active{ transform: translateY(1px); }
+
+    .taglist{ display:flex; flex-wrap:wrap; gap:8px; }
+  </style>
+  <script>
+    // If opened with ?print=1 then trigger the print dialog automatically once
+    (function () {
+      try {
+        var params = new URLSearchParams(window.location.search || '')
+        if (params.get('print') === '1') {
+          window.addEventListener('load', function () {
+            setTimeout(function () {
+              window.print()
+            }, 50)
+          })
+        }
+      } catch (e) {
+        // no-op
+      }
+    })()
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="name">AHMED ESSMAT</div>
+      <div class="title">Senior Customer Success Manager • Strategic Accounts & Global SaaS Platforms</div>
+      <div class="contacts">
+        <a class="chip" href="https://www.google.com/maps/search/?api=1&query=Cairo%2C%20Egypt" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+          Cairo, Egypt
+        </a>
+        <a class="chip" href="mailto:ahmedabdelgawad8888@gmail.com">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+          ahmedabdelgawad8888@gmail.com
+        </a>
+        <a class="chip" href="tel:+201024557722">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2Z"/></svg>
+          +20 1024557722
+        </a>
+        <a class="chip" href="https://linkedin.com/in/ahmed-essmat-elsayed" target="_blank" rel="noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.75h4.38v10.5H4.75Zm6.13 0h4.2v1.44h.06c.58-1.1 2-2.26 4.12-2.26 4.41 0 5.22 2.9 5.22 6.67v4.65h-4.38v-4.13c0-1 0-2.28-1.39-2.28s-1.6 1.09-1.6 2.21v4.2h-4.38Z"/></svg>
+          linkedin.com/in/ahmed-essmat-elsayed
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sidebar -->
+      <aside class="left">
+        <section class="card">
+          <h2>Professional Summary</h2>
+          <p>Senior Customer Success and CX leader with 12+ years driving retention, growth, and loyalty for enterprise and mid-market clients across SaaS, e-commerce, and telecom. Proven track record in managing multi-million-dollar strategic accounts, increasing NPS by double digits, and reducing churn through data-driven insights, process automation, and proactive engagement. Skilled at leading cross-functional teams, scaling customer success operations, and aligning product adoption with business outcomes. Adept at turning complex feedback into clear action plans that improve ROI, customer satisfaction, and lifetime value.</p>
+        </section>
+
+        <section class="card">
+          <h2>Core Competencies</h2>
+          <div class="taglist">
+            <span class="pill">Strategic Account Management</span>
+            <span class="pill">Relationship Building</span>
+            <span class="pill">Customer Success & Retention</span>
+            <span class="pill">SaaS • HRTech • Payroll</span>
+            <span class="pill">VoC Programs</span>
+            <span class="pill">Churn Reduction</span>
+            <span class="pill">NPS • CSAT • CLV</span>
+            <span class="pill">Health Score Monitoring</span>
+            <span class="pill">Insight Generation</span>
+            <span class="pill">Onboarding & QBRs</span>
+            <span class="pill">Lifecycle Optimization</span>
+            <span class="pill">Product Feedback & Roadmap Advocacy</span>
+            <span class="pill">Adoption Strategy</span>
+            <span class="pill">Salesforce</span>
+            <span class="pill">Power BI</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Technical Skills</h2>
+          <ul>
+            <li><strong>CX & Omnichannel Platforms:</strong> Contact Center, Digital, Social, Retail</li>
+            <li><strong>Analytics & BI:</strong> Power BI, NPS/TRIM Dashboards</li>
+            <li><strong>CRM & Automation:</strong> Salesforce, MoEngage, AI Tools</li>
+            <li><strong>Data:</strong> Analysis & Reporting</li>
+            <li><strong>Process:</strong> Automation & Workflow Optimization</li>
+            <li><strong>Languages:</strong> Arabic (Native), English (Professional)</li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Education</h2>
+          <p><strong>Ain Shams University</strong> — Bachelor of Laws (LL.B.), English Section<br/>2005 – 2009 • Grade: <strong>Good</strong></p>
+        </section>
+
+        <section class="card">
+          <h2>Certifications</h2>
+          <ul>
+            <li>Six Sigma Black Belt — LinkedIn, <strong>2025</strong></li>
+            <li>Lean Six Sigma Foundations — LinkedIn, <strong>2025</strong></li>
+            <li>Project Management Skills for Leaders — LinkedIn, <strong>2024</strong></li>
+            <li>Customer Experience (CX) Strategy — LinkedIn, <strong>2024</strong></li>
+            <li>Business Development Foundations — LinkedIn, <strong>2024</strong></li>
+            <li>What Is Generative AI? — LinkedIn, <strong>2024</strong></li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- Main column -->
+      <section class="right" style="display:flex; flex-direction:column; gap:18px;">
+        <section class="card">
+          <h2>Professional Experience</h2>
+
+          <article class="role" style="margin-bottom:14px;">
+            <h3>Head of Offline Marketing, Sales &amp; City Expansion</h3>
+            <div class="meta"><span class="place">Jumia Egypt — Cairo</span><span class="date">Jul 2024 – Present</span></div>
+            <ul>
+              <li class="bullet">Led customer success and strategic account initiatives for a multi-channel customer base, improving NPS by <strong>15% YoY</strong> and increasing customer retention rate.</li>
+              <li class="bullet">Designed and launched a Voice of the Customer (VoC) program that reduced churn risk among high-value enterprise accounts by <strong>22%</strong>.</li>
+              <li class="bullet">Leveraged Salesforce and Power BI dashboards to monitor customer health scores, adoption metrics, and renewal readiness.</li>
+              <li class="bullet">Partnered with cross-functional teams to standardize the customer journey mapping process, reducing experience variance by <strong>18%</strong> across touchpoints.</li>
+              <li class="bullet">Managed a CX initiative budget to deliver ROI-positive projects that improved customer lifetime value (CLV).</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:14px;">
+            <h3>Senior Manager — Customer Operations (CXP | CPA | B2B)</h3>
+            <div class="meta"><span class="place">Jumia Egypt</span><span class="date">Jan 2020 – Jul 2024</span></div>
+            <ul>
+              <li class="bullet">Directed customer operations for B2B SaaS and e-commerce platforms, achieving <strong>95% SLA compliance</strong> and reducing escalation rates by <strong>30%</strong>.</li>
+              <li class="bullet">Launched a Customer Insights Program that identified top churn drivers, enabling targeted interventions and reducing churn rate by <strong>15%</strong>.</li>
+              <li class="bullet">Collaborated with product teams on <strong>6+ SaaS</strong> product launches, optimizing onboarding and customer adoption processes, boosting retention by <strong>25%</strong>.</li>
+              <li class="bullet">Integrated AI-powered sentiment analysis into customer success workflows to improve renewal forecasting and upsell targeting.</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:14px;">
+            <h3>Customer Experience Manager — Jumia Food &amp; Marketplace</h3>
+            <div class="meta"><span class="place">Jumia Egypt</span><span class="date">Dec 2018 – Jan 2020</span></div>
+            <ul>
+              <li class="bullet">Managed the end-to-end customer lifecycle from onboarding to renewal, improving retention rate by <strong>12%</strong>.</li>
+              <li class="bullet">Implemented real-time service tracking and reporting, cutting resolution time from <strong>48 to 18 hours</strong> and improving CSAT scores.</li>
+              <li class="bullet">Led cross-functional QBR-style reviews with product, support, and marketing to align CX strategies with revenue growth objectives.</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:14px;">
+            <h3>Queue Management &amp; Process Optimization Expert</h3>
+            <div class="meta"><span class="place">Jumia Egypt</span><span class="date">2016 – 2018</span></div>
+            <ul>
+              <li class="bullet">Optimized support operations workflows and automated ticket routing, cutting average handling time by <strong>15%</strong>.</li>
+              <li class="bullet">Reduced backlog and improved SLA adherence by streamlining case management processes in CRM systems.</li>
+              <li class="bullet">Delivered process training to service teams, increasing first-contact resolution rate by <strong>18%</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:14px;">
+            <h3>Senior Customer Service Associate</h3>
+            <div class="meta"><span class="place">Jumia Egypt</span><span class="date">2014 – 2016</span></div>
+            <ul>
+              <li class="bullet">Provided Tier 1 and Tier 2 customer support across multiple channels, achieving <strong>98% QA</strong> scores and exceeding SLA targets.</li>
+              <li class="bullet">Handled escalations for enterprise and VIP clients, improving churn prevention outcomes by <strong>10%</strong>.</li>
+              <li class="bullet">Assisted in onboarding new hires into customer success best practices, reducing ramp-up time by <strong>25%</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:4px;">
+            <h3>Operations Manager</h3>
+            <div class="meta"><span class="place">Marassi (Emaar Misr)</span><span class="date">2012 – 2014</span></div>
+            <ul>
+              <li class="bullet">Directed daily operations management for a large-scale property portfolio, achieving <strong>99%</strong> service request completion within SLA.</li>
+              <li class="bullet">Introduced a customer feedback loop to measure and improve resident satisfaction scores by <strong>15%</strong>.</li>
+              <li class="bullet">Negotiated vendor contracts that reduced operational expenses by <strong>12%</strong> without compromising service quality.</li>
+            </ul>
+          </article>
+
+          <article class="role" style="margin-bottom:0;">
+            <h3>Support Specialist</h3>
+            <div class="meta"><span class="place">Du Telecom UAE / Etisalat UAE</span><span class="date">2009 – 2012</span></div>
+            <ul>
+              <li class="bullet">Delivered technical support and account management for telecom clients, maintaining <strong>95%+ CSAT</strong> scores.</li>
+              <li class="bullet">Resolved network and service escalations in collaboration with engineering, reducing average downtime by <strong>20%</strong>.</li>
+              <li class="bullet">Conducted training on troubleshooting workflows, reducing repeat calls by <strong>15%</strong>.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="card">
+          <h2>Key Achievements</h2>
+          <ul>
+            <li>Consistently raised NPS and satisfaction scores year-over-year by acting quickly on customer insights.</li>
+            <li>Improved CX outcomes by connecting feedback from digital, retail, and social channels into unified action plans.</li>
+            <li>Led and developed diverse teams during high-growth and transformation periods.</li>
+            <li>Supported multiple product and channel launches with a focus on improving adoption and usability.</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <!-- Floating actions -->
+  <div class="fab print-hide">
+    <button class="btn" onclick="window.print()">Print / Save PDF</button>
+  </div>
+</body>
+</html>
